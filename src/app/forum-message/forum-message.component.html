@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsiive Admin Dashboard | CodingLab</title>
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class=""></i>
+          <span  routerLink="statistique"  class="logo_name ">pënc</span>
+        </div>
+        <div><h4 class="titreDomaine text-white text-center mt-4">Sujets</h4></div>
+        <ul class="nav-links">
+          <li>
+            <a  class="active">
+              <i class="bx bx-grid-alt"></i>
+              <span class="menuItem" routerLinkActive="activeMenu" routerLink="statistique"  class="links_name"> Elevage </span>
+            </a>
+          </li>
+         
+        
+          <li class="log_out">
+            <a >
+              <i class="bx bx-log-out"></i>
+              <span class="menuItem" routerLinkActive="activeMenu" routerLink="accueil"  class="links_name">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+        
+        <nav class="nav-admin shadow d-flex" style="padding-right: 22px;">
+          <div class="flex-grow-1"></div>
+          <div class="icon-notification fs-4 text-end fw-bold" style="margin-right: 11px;">
+            <i class="fa-regular fa-bell" style="color: #0a2640;"></i>
+          </div>
+          <div class="icon-profile fs-4 text-end fw-bold">
+            <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+      
+          </div>
+        </nav>
+
+    <div class="home-content">
+
+      <div class="mt-5">
+
+          
+        
+          <div class="card mt-5">
+            <div class="card-content d-flex justify-content-between">
+              <div class="card-description">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis laborum  sit illum omnis iusto molestiae?</p>
+              </div>
+              <div class="card-buttons">
+                <button class="card-button btn1">Masquer</button>
+                <button class="card-button btn">Voir plus </button>
+              </div>
+              <div class="card-details">
+                <div class="card-detail-item">
+                    <i class="fa-solid fa-city" style="color: #0A2640;"></i>
+                  <span>Domaine Elevage </span>
+                </div>
+                <div class="card-detail-item orange-color">
+                    <i class="fa-regular fa-calendar-days" style="color: #FFC107;"></i>
+                    <span>publié le 06/12/2023 </span>
+                  </div>
+                <div class="card-detail-item">
+                  <i class="fa-solid fa-message" style="color: #0A2640;"></i>
+                  <span>Nombre de messages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+          <section class="messagetop">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12 pb-4">
+                        <div class="comment mt-4 text-justify float-left">
+                            <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">&nbsp;&nbsp;
+                            <h5>Jhon Doe</h5>
+                            <span class="fw-bold" > &nbsp; le 20 October, 2023 à 19h</span>
+                            <br>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
+                             <div class="container">
+                                <div class="icons">
+                                    <i class="fa-regular fa-thumbs-down" style="color: #0a2640;"></i>
+                                    <i class="fa-regular fa-thumbs-up" style="color: #0a2640;"></i>
+                                </div>
+                                <a href="#" class="reply-link fs-6 fw-bold" style="color: #0a2640;">Répondre</a>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+        
+              
+            </div>
+        </section>
+         
+          
+           <!-- <div class="home-content">
+          </div> -->
+      </div>
+
+
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+      
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>
+

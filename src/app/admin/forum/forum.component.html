@@ -1,0 +1,75 @@
+<div class="search-section">
+  <button class="search-button" data-bs-toggle="modal" data-bs-target="#forum">
+    Ajouter un Forum
+  </button>
+  <div class="search-input shadow">
+    <input type="text" placeholder="Recherche ici">
+    <i class="bx bx-search"></i>
+  </div>
+</div>
+
+<div class="mt-4 text-center">
+  <h3 class="fw-bold">Liste forum</h3>
+</div>
+
+<div class="container table-responsive mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>forumname forum</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let forum of forums">
+        <td> {{ forum.forumname }} </td>
+        <td> {{ forum.description }}</td>
+        <td>
+          <button class="action-button btn1">Supprimer</button> &nbsp;
+          <button class="action-button btn">Modérer</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Santé</td>
+        <td>Votre santé, votre bien-être, notre priorité.</td>
+        <td>
+          <button class="action-button btn1">Supprimer</button> &nbsp;
+          <button class="action-button btn">Modérer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<!-- Modal -->
+<form (submit)="ajouterForum()">
+
+  <div class="modal fade" id="forum" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter forum</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="forumname forum" [(ngModel)]="nouveauForum.forumname" required>
+            <label for="floatingInput">forumname forum</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" [(ngModel)]="nouveauForum.description" required></textarea>
+            <label for="floatingTextarea2">Description</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</form>
