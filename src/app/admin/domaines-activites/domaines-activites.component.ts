@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomaineActivite } from 'src/app/models/DomaineActivite';
 import { ServiceDomainesService } from 'src/app/services/service-domaines.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-domaines-activites',
@@ -35,9 +36,15 @@ export class DomainesActivitesComponent implements OnInit {
 
 ngOnInit(): void {
   this.userConnect = JSON.parse(localStorage.getItem("userConnect") || ""); 
-
-
   this.listerDomaine();
+}
+
+verifierChamps(title: any, text: any, icon: any) {
+  Swal.fire({
+    title: title,
+    text: text,
+    icon: icon
+  });
 }
 
 ajoutDomaine(){
@@ -51,18 +58,9 @@ ajoutDomaine(){
     console.log(formData);
    
 
-
-  // this.domaineActivite.get("user_id").patchValue(this.userConnect.user.id)
-  // console.log(this.domaineActivite.value)
-  // this.domaineService.ajoutDomaine(this.domaineActivite.value).subscribe(response=>{
-  //   console.log(response)
-  // })
-
-
-
-
   this.domaineService.ajoutDomaine(formData).subscribe(
     (response :any)=>{
+      this.verifierChamps("Super","domaine ajouté avec succes","success")
     console.log(response);
     this.listeDomaines.unshift(response);
     this.domaineActivite.reset();
@@ -73,6 +71,7 @@ ajoutDomaine(){
   },
   
   (err)=>{
+    this.verifierChamps("Erreur","domaine non ajouté","error")
     console.log(err)
   }
   )
@@ -82,14 +81,6 @@ getFile(event: any) {
   console.warn(event.target.files[0]);
   this.picture= event.target.files[0] as File;
 }
-
-
-// listerDomaine(){
-//   this.domaineService.listerDomaine().subscribe(response=>{
-
-//   })
-// }
-
 
 listerDomaine(): void {
   this.domaineService.listerDomaine().subscribe(
@@ -105,8 +96,6 @@ listerDomaine(): void {
   );
 }
 
-
-
 modifierDomaine(domaine: DomaineActivite) {
   // Afficher un formulaire de modification ou effectuer toute autre action nécessaire pour la modification
 
@@ -116,12 +105,6 @@ modifierDomaine(domaine: DomaineActivite) {
     this.listeDomaines[index] = domaine;
   }
 }
-
-
-
-
-
-
 
 }
 

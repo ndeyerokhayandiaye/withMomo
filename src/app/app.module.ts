@@ -19,6 +19,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceLoginService } from './services/service-login.service';
 import { AuthInterceptor } from './intercepteur/intercepteur';
 import { AdminModule } from './admin/admin.module';
+import { ForumSujetSpecificComponent } from './forum-sujet-specific/forum-sujet-specific.component';
 // import { DataTablesModule } from 'angular-datatables';
 // import { DataTablesModule } from 'angular-datatables';
 // import { DataTablesModule } from 'angular-datatables/src/angular-datatables.module';
@@ -37,6 +38,7 @@ import { AdminModule } from './admin/admin.module';
     HeaderAdminComponent,
     ForumSujetComponent,
     ForumMessageComponent,
+    ForumSujetSpecificComponent,
   ],
   imports: [
     BrowserModule,

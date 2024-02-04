@@ -37,7 +37,6 @@ serviceLoginService: any;
 
 
   ngOnInit(): void {
-    // this.tabUtilisateurs = JSON.parse(localStorage.getItem("utilisateurs") || "[]");
     if(!localStorage.getItem("userConnect")){
       localStorage.setItem('userConnect', JSON.stringify(""));
     }
@@ -141,7 +140,7 @@ login(){
         }
         else{
 
-          this.verifierChamps("Connexion desétablie","Ce compte n'existe pas","error");
+          this.verifierChamps( "Connexion desétablie","Ce compte n'existe pas","error");
         }
         // Sauvegarde des informations de connexion dans le localStorage
         

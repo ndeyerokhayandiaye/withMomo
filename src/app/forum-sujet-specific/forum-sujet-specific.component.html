@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -188,7 +189,7 @@
 
 <!-- modal -->
 
-<form (submit)="ajoutSujet()">
+<form >
 
   <div class="modal fade" id="forum" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -200,7 +201,7 @@
         <div class="modal-body">
          
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  [(ngModel)]="nouveauSujet.content" required></textarea>
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
             <label for="floatingTextarea2">Sujet</label>
           </div>
         </div>

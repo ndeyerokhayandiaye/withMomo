@@ -1,9 +1,10 @@
-export class Forum {
-    forumname!: string;
-    description!: string;
-    user_id!:number;
-}
-
+export interface Forum {
+    id: number;
+    forumname: string;
+    description: string;
+    field_id: number;
+    user_id: number;
+  }
 
 
 

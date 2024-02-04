@@ -6,6 +6,7 @@ import { PolitiqueComponent } from './politique/politique.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { ForumSujetComponent } from './forum-sujet/forum-sujet.component';
 import { ForumMessageComponent } from './forum-message/forum-message.component';
+import { ForumSujetSpecificComponent } from './forum-sujet-specific/forum-sujet-specific.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'politique', component: PolitiqueComponent },
   { path: 'forumSujet', component: ForumSujetComponent },
   { path: 'forumMessage', component: ForumMessageComponent },
+  { path: 'forumSujetSpecific/:id', component: ForumSujetSpecificComponent },
 
 
 
