@@ -9,7 +9,7 @@ import { ForumMessageComponent } from './forum-message/forum-message.component';
 import { ForumSujetSpecificComponent } from './forum-sujet-specific/forum-sujet-specific.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
   { path: 'login', component: AuthentificationComponent },
   { path: 'conditionUtilisation', component: ConditiondutilisationComponent },

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-domaines-activites',
   templateUrl: './domaines-activites.component.html',
-  styleUrls: ['./domaines-activites.component.css']
+  styleUrls: [ './domaines-activites.component.css']
 })
 export class DomainesActivitesComponent implements OnInit {
 

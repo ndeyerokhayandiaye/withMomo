@@ -76,7 +76,7 @@
           </button>
           
         
-          <div class="card mt-5">
+          <!-- <div class="card mt-5">
             <div class="card-content d-flex justify-content-between">
               <div class="card-description" *ngFor="let sujet of sujets">
                 <p>{{ sujet.content }}</p>
@@ -100,35 +100,37 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         
           <div class="card mt-4">
             <div class="card-content d-flex justify-content-between">
               <div class="card-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis laborum  sit illum omnis iusto molestiae?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis inventore explicabo quaerat eaque molestias soluta sed minima mollitia! Unde eaque soluta veniam assumenda numquam corporis, vero ducimus necessitatibus adipisci non?</p>
               </div>
               <div class="card-buttons">
                 <button class="card-button btn1">Masquer</button>
-                <button class="card-button btn" routerLink="/forumMessage">Voir plus </button>
+                <button class="card-button btn" routerLink="/forumMessage">Voir plus</button>
               </div>
               <div class="card-details">
                 <div class="card-detail-item">
-                    <i class="fa-solid fa-city" style="color: #0A2640;"></i>
-                  <span>Domaine Elevage </span>
+                  <i class="fa-solid fa-city" style="color: #0A2640;"></i>
+                  <span>Domaine elevage </span>
                 </div>
                 <div class="card-detail-item orange-color">
-                    <i class="fa-regular fa-calendar-days" style="color: #FFC107;"></i>
-                    <span>publié le 06/12/2023 </span>
-                  </div>
+                  <i class="fa-regular fa-calendar-days" style="color: #FFC107;"></i>
+                  <span>publié le 12/06/2023</span>
+                </div>
                 <div class="card-detail-item">
                   <i class="fa-solid fa-message" style="color: #0A2640;"></i>
-                  <span>Nombre de messages</span>
+                  <span>nombre de message</span>
                 </div>
               </div>
             </div>
           </div>
+          
+      
 
-          <div class="card mt-4">
+          <!-- <div class="card mt-4">
             <div class="card-content d-flex justify-content-between">
               <div class="card-description">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis laborum  sit illum omnis iusto molestiae?</p>
@@ -152,7 +154,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
            <!-- <div class="home-content">
           </div> -->
@@ -161,16 +163,7 @@
 
 
         </div>
-      </section>
-
-
-
-
-
-
-
-
-      
+      </section>      
 
     <script>
       let sidebar = document.querySelector(".sidebar");
@@ -188,7 +181,7 @@
 
 <!-- modal -->
 
-<form (submit)="ajoutSujet()">
+<form>
 
   <div class="modal fade" id="forum" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -200,16 +193,16 @@
         <div class="modal-body">
          
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  [(ngModel)]="nouveauSujet.content" required></textarea>
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  required></textarea>
             <label for="floatingTextarea2">Sujet</label>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ajouter</button>
+
+          <button>Ajouter</button>
+          <!-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ajouter</button> -->
         </div>
       </div>
     </div>
   </div>
-
-
 </form>

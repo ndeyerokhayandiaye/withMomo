@@ -2,10 +2,12 @@
   <button class="search-button"  data-bs-toggle="modal" data-bs-target="#forum">
     Ajouter un forum 
   </button>
-  <div class="search-input shadow">
-    <input type="text" placeholder="Recherche ici">
-    <i class="bx bx-search"></i>
-  </div>
+ 
+    <select class="form-select mt-5 search-input shadow w-50" aria-label="Default select example" >
+      <option selected disabled>Choisissez un domaine</option>
+      <option *ngFor="let domaine of listeDomaines" [value]="domaine.id">{{ domaine.fieldname }}</option>
+    </select>
+  
 </div>
 <div class="mt-4 text-center">
 <h3 class="fw-bold">Liste forum</h3>
