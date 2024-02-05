@@ -182,6 +182,20 @@ login(){
   }
 
 
+  logout() {
+    this.loginService.logout().subscribe(
+      () => {
+        // Gérer la déconnexion réussie
+        console.log('Déconnexion réussie');
+        // Rediriger l'utilisateur vers une autre page si nécessaire
+      },
+      (error) => {
+        // Gérer les erreurs de déconnexion
+        console.log('Erreur lors de la déconnexion', error);
+      }
+    );
+  }
+
   private handleError(error: any): void {
     if (error && error.message) {
       console.log(error.message);

@@ -25,7 +25,7 @@
                  
         
           <li class="log_out">
-            <a >
+            <a onclick="logout()" >
               <i class="bx bx-log-out"></i>
               <span class="menuItem" routerLinkActive="activeMenu" routerLink="accueil"  class="links_name">Log out</span>
             </a>
@@ -102,10 +102,10 @@
             </div>
           </div> -->
         
-          <div class="card mt-4">
+          <div class="card mt-4" *ngFor="let forum of forums">
             <div class="card-content d-flex justify-content-between">
               <div class="card-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis inventore explicabo quaerat eaque molestias soluta sed minima mollitia! Unde eaque soluta veniam assumenda numquam corporis, vero ducimus necessitatibus adipisci non?</p>
+                <p>{{ forum.content }}</p>
               </div>
               <div class="card-buttons">
                 <button class="card-button btn1">Masquer</button>
@@ -114,15 +114,15 @@
               <div class="card-details">
                 <div class="card-detail-item">
                   <i class="fa-solid fa-city" style="color: #0A2640;"></i>
-                  <span>Domaine elevage </span>
+                  <span>{{ forum.forum_id }} </span>
                 </div>
                 <div class="card-detail-item orange-color">
                   <i class="fa-regular fa-calendar-days" style="color: #FFC107;"></i>
-                  <span>publié le 12/06/2023</span>
+                  <span>{{ forum.created_at }}</span>
                 </div>
                 <div class="card-detail-item">
                   <i class="fa-solid fa-message" style="color: #0A2640;"></i>
-                  <span>nombre de message</span>
+                  <span>{{ forum.message_received}}</span>
                 </div>
               </div>
             </div>
@@ -193,13 +193,19 @@
         <div class="modal-body">
          
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  required></textarea>
-            <label for="floatingTextarea2">Sujet</label>
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  [(ngModel)]="newForum.content"  required></textarea>
+            <label for="floatingTextarea2" >Sujet</label>
           </div>
+
+          <!-- <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"  required></textarea>
+            <label for="floatingTextarea2"  [(ngModel)]="newForum.content" >Sujet</label>
+          </div> -->
         </div>
         <div class="modal-footer">
 
-          <button>Ajouter</button>
+          <button  (click)="createForum(newForum)">Ajouter</button>
+          <!-- <button  (click)="createForum(newForum)">Ajouter</button> -->
           <!-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ajouter</button> -->
         </div>
       </div>

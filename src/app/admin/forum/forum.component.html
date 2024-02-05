@@ -3,10 +3,7 @@
     Ajouter un forum 
   </button>
  
-    <select class="form-select mt-5 search-input shadow w-50" aria-label="Default select example" >
-      <option selected disabled>Choisissez un domaine</option>
-      <option *ngFor="let domaine of listeDomaines" [value]="domaine.id">{{ domaine.fieldname }}</option>
-    </select>
+ <!-- partiee select -->
   
 </div>
 <div class="mt-4 text-center">
@@ -52,7 +49,12 @@
         <div class="form-floating mb-3">
           <input type="text" name="description" class="form-control" [(ngModel)]="newForum.description" placeholder="Description">
           <label for="description">Description</label>
-        </div>        
+        </div>  
+        
+        <select class="form-select mt-5 search-input shadow w-50" aria-label="Default select example" >
+          <option selected disabled>Choisissez un domaine</option>
+          <option *ngFor="let domaine of listeDomaines" [value]="domaine.id">{{ domaine.fieldname }}</option>
+        </select>
         
       </div>
       <div class="modal-footer">

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { baseUrl} from './url';
 import { Observable } from 'rxjs/internal/Observable';
+import { Sujet } from '../models/Sujet';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,22 @@ export class ForumSujetService {
 
   constructor(private http:HttpClient) { }
 
+  getAllForums(): Observable<Sujet[]> {
+    return this.http.get<Sujet[]>(`${baseUrl}/displaytopic`);
+  }
+
+ 
+  createForum(forum: Sujet): Observable<Sujet> {
+    return this.http.post<Sujet>(`${baseUrl}/addtopic`, forum);
+  }
+
+  updateForum(id: number, forum: Sujet): Observable<Sujet> {
+    return this.http.put<Sujet>(`${baseUrl}/topic/${id}`, forum);
+  }
+
+  deleteForum(id: number): Observable<void> {
+    return this.http.delete<void>(`${baseUrl}/deletetopic/${id}`);
+  }
 
 
 

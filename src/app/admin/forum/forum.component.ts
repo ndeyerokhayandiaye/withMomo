@@ -18,7 +18,7 @@ export class ForumComponent {
   listeDomaines: DomaineActivite[];
   
 forums: Forum[] = [];
-newForum: Forum = { id: 0, forumname: '', description: '', field_id: 13, user_id: 0 };
+newForum: Forum = { id: 0, forumname: '', description: '', field_id: 15 , user_id: 0 };
 
   constructor(private forumService: ServiceForumService,
     private domaineService: ServiceDomainesService,
